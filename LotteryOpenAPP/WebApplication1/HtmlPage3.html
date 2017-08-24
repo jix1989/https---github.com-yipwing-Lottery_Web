@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="JQuery-1.2.6.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $.ajax({
+            type: 'POST',
+            url: "http://localhost:49690/WebService.asmx?op=Json_LoginOn",
+            dataType: "xml",
+            data: { name: "jix007", pwd: "a"},
+            success: function (data) {
+                //$(data).find('string').each
+                //console.log(data);
+                //alert(data);
+                var s = "";
+                console.log(data);
+                console.log($(data).find('string').text());
+                //$(data).find('Members').each(function (i) {
+                //    var id = $(this).children('Id').text();
+                //    var name = $(this).children('MemberName').text();
+                //    var author = $(this).children('Pwd').text();
+                //    s += id + "    " + name + "    " + author + "    ";
+                //    alert(s);
+                //});
+                //var s = "";
+                //$(data).find('string').each(function (i) {
+                //    var id = $(this).attr('id');
+                //    var name = $(this).children('name').text();
+                //    var author = $(this).children('pwd').text();
+                //    var price = $(this).children('price').text();
+                //    s += id + "    " + name + "    " + author + "    " + price + "<br>";
+                //});
+                //alert(s);
+                if(data.code == "error") {
+                    $(".con_login .modity_text").css("visibility","visible").text("提示: 账户与密码输入有误!");
+                }
+                if(data.redirect)
+                    window.islogin = true;
+                userInfo = JSON.stringify(data.user);
+                document.cookie = userInfo;
+                //redirect(data.redirect);
+            },
+            error: function (e) {
+                console.log(e);
+                //alert(e);
+                //				alert("登入失败, " + e);
+            }
+        });
+        function aa() {
+            var Home = "1,2,3,4,5,6"; //new Array(1,2,3,4,5,6);
+            $.ajax({
+                type: 'POST',
+                url: "http://localhost:49690/WebService.asmx/Json_GetLotteryNextInfo",
+                dataType: "xml",
+                data: { LotteryId: Home },
+                success: function (data) {
+                    //$(data).find('string').each
+                    //console.log(data);
+                    //alert(data);
+                    //var s = "";
+                    console.log($(data).find('string').text());
+                    //$(data).find('Members').each(function (i) {
+                    //    var id = $(this).children('Id').text();
+                    //    var name = $(this).children('MemberName').text();
+                    //    var author = $(this).children('Pwd').text();
+                    //    s += id + "    " + name + "    " + author + "    ";
+                    //    alert(s);
+                    //});
+                    //var s = "";
+                    //$(data).find('string').each(function (i) {
+                    //    var id = $(this).attr('id');
+                    //    var name = $(this).children('name').text();
+                    //    var author = $(this).children('pwd').text();
+                    //    var price = $(this).children('price').text();
+                    //    s += id + "    " + name + "    " + author + "    " + price + "<br>";
+                    //});
+                    //alert(s);
+                    if (data.code == "error") {
+                        $(".con_login .modity_text").css("visibility", "visible").text("提示: 账户与密码输入有误!");
+                    }
+                    if (data.redirect)
+                        window.islogin = true;
+                    userInfo = JSON.stringify(data.user);
+                    document.cookie = userInfo;
+                    //redirect(data.redirect);
+                },
+                error: function (e) {
+                    alert(e);
+                    //				alert("登入失败, " + e);
+                }
+            });
+        }
+        
+    </script>
+        </head>
+        <body>
+            <button onclick="aa()">test</button>
+        </body>
+        </html>

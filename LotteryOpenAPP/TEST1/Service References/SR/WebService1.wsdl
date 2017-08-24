@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://XY.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://XY.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://XY.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginOnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginOnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="tns:Account" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Account">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountPwd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountParentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNickname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentSSC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercent11X5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentDPC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoginCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLogin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankCardLockStatus" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotteryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryListResult" type="tns:ArrayOfWS_Lotterys" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_Lotterys">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_Lotterys" nillable="true" type="tns:WS_Lotterys" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_Lotterys">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStart" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeEnd" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetweenMinute" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptLength" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptOneDay" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryPlayList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotteryPlayListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryPlayListResult" type="tns:ArrayOfLotteryPlays" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLotteryPlays">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LotteryPlays" nillable="true" type="tns:LotteryPlays" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LotteryPlays">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LotteryPlayId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryPlayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayBack" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginOnSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginOn" />
+  </wsdl:message>
+  <wsdl:message name="LoginOnSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryList" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryPlayListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryPlayList" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryPlayListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryPlayListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <wsdl:input message="tns:LoginOnSoapIn" />
+      <wsdl:output message="tns:LoginOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <wsdl:input message="tns:GetLotteryListSoapIn" />
+      <wsdl:output message="tns:GetLotteryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <wsdl:input message="tns:GetLotteryPlayListSoapIn" />
+      <wsdl:output message="tns:GetLotteryPlayListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://XY.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <soap:operation soapAction="http://XY.org/LoginOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://XY.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <soap:operation soapAction="http://XY.org/GetLotteryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <soap:operation soapAction="http://XY.org/GetLotteryPlayList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://XY.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <soap12:operation soapAction="http://XY.org/LoginOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://XY.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <soap12:operation soapAction="http://XY.org/GetLotteryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <soap12:operation soapAction="http://XY.org/GetLotteryPlayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:49690/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:49690/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

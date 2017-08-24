@@ -1,0 +1,17 @@
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\LotteryOpenAPP.exe.config
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\LotteryOpenAPP.exe
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\LotteryOpenAPP.pdb
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\EntityFramework.dll
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\EntityFramework.SqlServer.dll
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\LotteryModel.pdb
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\EntityFramework.xml
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\bin\Release\EntityFramework.SqlServer.xml
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.FrmBackTool.resources
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.FrmMain.resources
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.FrmOpen1m_11x5.resources
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.Properties.Resources.resources
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.csproj.GenerateResource.Cache
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.exe
+E:\JIX\LotteryOpenAPP\LotteryOpenAPP\obj\Release\LotteryOpenAPP.pdb

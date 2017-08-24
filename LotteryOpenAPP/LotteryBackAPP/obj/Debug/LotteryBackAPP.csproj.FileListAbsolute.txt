@@ -1,0 +1,15 @@
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\LotteryBackAPP.exe
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\LotteryBackAPP.pdb
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\EntityFramework.dll
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\EntityFramework.SqlServer.dll
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\LotteryModel.pdb
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\EntityFramework.xml
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\EntityFramework.SqlServer.xml
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.FrmBackTool.resources
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.Properties.Resources.resources
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.csproj.GenerateResource.Cache
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.exe
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\obj\Debug\LotteryBackAPP.pdb
+E:\JIX\LotteryOpenAPP\LotteryBackAPP\bin\Debug\LotteryBackAPP.exe.config

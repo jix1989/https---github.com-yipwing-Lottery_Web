@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29DC80CA-8673-46D8-86E5-E4A7F9D0BAF1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LotteryGameApp</RootNamespace>
+    <AssemblyName>LotteryGameApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>C:\Users\Administrator\Desktop\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>C:\Users\Administrator\Desktop\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\new\LotteryGameApp\LotteryGameApp\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAddBankCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddBankCard.Designer.cs">
+      <DependentUpon>FrmAddBankCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgent.Designer.cs">
+      <DependentUpon>FrmAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBetInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBetInfo.Designer.cs">
+      <DependentUpon>FrmBetInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBet_SSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBet_SSC.designer.cs">
+      <DependentUpon>FrmBet_SSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGameHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGameHistory.Designer.cs">
+      <DependentUpon>FrmGameHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBet_11x5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBet_11x5.designer.cs">
+      <DependentUpon>FrmBet_11x5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMyAccount.Designer.cs">
+      <DependentUpon>FrmMyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRechargeWithdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRechargeWithdraw.Designer.cs">
+      <DependentUpon>FrmRechargeWithdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmZbReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmZbReport.Designer.cs">
+      <DependentUpon>FrmZbReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticInfo.cs" />
+    <Compile Include="Tool\BankCardTool.cs" />
+    <Compile Include="Tool\BetCalculateTools.cs" />
+    <Compile Include="Tool\JsonHelper.cs" />
+    <Compile Include="Tool\NetHelper.cs" />
+    <Compile Include="Tool\Tools.cs" />
+    <Compile Include="UserControls\LotteryChoiceNoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LotteryChoiceNoControl.designer.cs">
+      <DependentUpon>LotteryChoiceNoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LotteryInptuNoControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LotteryInptuNoControl1.designer.cs">
+      <DependentUpon>LotteryInptuNoControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LotteryInptuNoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LotteryInptuNoControl.designer.cs">
+      <DependentUpon>LotteryInptuNoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LotteryPositionCbk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LotteryPositionCbk.Designer.cs">
+      <DependentUpon>LotteryPositionCbk.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmAddBankCard.resx">
+      <DependentUpon>FrmAddBankCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgent.resx">
+      <DependentUpon>FrmAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBetInfo.resx">
+      <DependentUpon>FrmBetInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBet_SSC.resx">
+      <DependentUpon>FrmBet_SSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGameHistory.resx">
+      <DependentUpon>FrmGameHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBet_11x5.resx">
+      <DependentUpon>FrmBet_11x5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMyAccount.resx">
+      <DependentUpon>FrmMyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRechargeWithdraw.resx">
+      <DependentUpon>FrmRechargeWithdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmZbReport.resx">
+      <DependentUpon>FrmZbReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\LotteryChoiceNoControl.resx">
+      <DependentUpon>LotteryChoiceNoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LotteryInptuNoControl1.resx">
+      <DependentUpon>LotteryInptuNoControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LotteryInptuNoControl.resx">
+      <DependentUpon>LotteryInptuNoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LotteryPositionCbk.resx">
+      <DependentUpon>LotteryPositionCbk.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LotteryModel\LotteryModel.csproj">
+      <Project>{53667f58-c5b2-48df-af2c-50413bfd4eba}</Project>
+      <Name>LotteryModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\bg.jpg" />
+    <None Include="Resources\bet-bg.jpg" />
+    <None Include="Resources\Banner2.png" />
+    <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

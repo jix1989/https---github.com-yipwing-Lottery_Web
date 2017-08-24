@@ -1,0 +1,15 @@
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\Test.exe.config
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\Test.exe
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\Test.pdb
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\EntityFramework.dll
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\EntityFramework.SqlServer.dll
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\LotteryModel.pdb
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\EntityFramework.xml
+E:\JIX\LotteryOpenAPP\Test\bin\Debug\EntityFramework.SqlServer.xml
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.FrmMNTest.resources
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.Properties.Resources.resources
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.exe
+E:\JIX\LotteryOpenAPP\Test\obj\Debug\Test.pdb

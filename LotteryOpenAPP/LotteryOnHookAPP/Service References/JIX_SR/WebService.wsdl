@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://XY.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://XY.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://XY.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginOn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginOnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginOnResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="tns:Account" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Account">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountPwd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountParentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNickname" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentSSC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercent11X5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentDPC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoginCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLogin" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankCardLockStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountMoneyPwd" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotteryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryListResult" type="tns:ArrayOfWS_Lotterys" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_Lotterys">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_Lotterys" nillable="true" type="tns:WS_Lotterys" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_Lotterys">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStart" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeEnd" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetweenMinute" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptLength" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptOneDay" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryPlayList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotteryPlayListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryPlayListResult" type="tns:ArrayOfLotteryPlays" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLotteryPlays">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LotteryPlays" nillable="true" type="tns:LotteryPlays" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LotteryPlays">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LotteryPlayId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryPlayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrizeClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayBack" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryNextInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LotteryId" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryNextInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryNextInfoResult" type="tns:ArrayOfWS_LotteryOffcialSchedule" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_LotteryOffcialSchedule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_LotteryOffcialSchedule" nillable="true" type="tns:WS_LotteryOffcialSchedule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_LotteryOffcialSchedule">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expect" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScheduleOpenTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLotteryHistroyInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLotteryHistroyInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLotteryHistroyInfoResult" type="tns:ArrayOfWS_LotteryOpenInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_LotteryOpenInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_LotteryOpenInfo" nillable="true" type="tns:WS_LotteryOpenInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_LotteryOpenInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expect" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDateTimeNow">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDateTimeNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDateTimeNowResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBetInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Execpt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="betTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBetInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBetInfoListResult" type="tns:ArrayOfWS_BetInfoDgv" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_BetInfoDgv">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_BetInfoDgv" nillable="true" type="tns:WS_BetInfoDgv" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_BetInfoDgv">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LotteryExcept" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultTypeStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BetNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetTimes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BackMoney" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WinUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WinMoney" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="GetBackPercent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BackTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChoicePosition" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGetBackPercent" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsChaseNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBetInfoResult" type="tns:WS_BetInfoDgv" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Except" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BetInfo" type="tns:ArrayOfWS_BetInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_BetInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_BetInfo" nillable="true" type="tns:WS_BetInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_BetInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BetNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetPlayTypeCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetUnit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetTimes" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BetMoneyMode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BetMoney" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChoicePosition" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGetBackPercent" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendBetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendBetInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBusiness">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BetId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusinessId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtEnd" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountBusinessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountBusinessResult" type="tns:ArrayOfWS_AccountBusiness" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_AccountBusiness">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_AccountBusiness" nillable="true" type="tns:WS_AccountBusiness" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_AccountBusiness">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BusinessTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BusinessTypeStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayIn" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayOut" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayBefore" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PayAfter" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventId" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProvincesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProvincesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProvincesListResult" type="tns:ArrayOfProvinces" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProvinces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Provinces" nillable="true" type="tns:Provinces" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Provinces">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProvinceName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCitiesList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCitiesListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCitiesListResult" type="tns:ArrayOfCities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cities" nillable="true" type="tns:Cities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cities">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProvinceId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BindBankCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankCard" type="tns:WS_BankCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WS_BankCard">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="No" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpenCardName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityId" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BindBankCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BindBankCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBankCardResult" type="tns:ArrayOfWS_BankCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_BankCard">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_BankCard" nillable="true" type="tns:WS_BankCard" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EditLoginPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Opwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Npwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLoginPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditLoginPwdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditMoneyPwd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Opwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Npwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditMoneyPwdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditMoneyPwdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditNickName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NickName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditNickNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditNickNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LockBankCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LockBankCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LockBankCardResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegChildAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Account" type="tns:Account" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegChildAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegChildAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistsLoginName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistsLoginNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsExistsLoginNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBetInfoList1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LotteryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ResultType" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BetInfoId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isIncludeChaseNumber" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBetInfoList1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBetInfoList1Result" type="tns:ArrayOfWS_BetInfoDgv" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPayRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pay" type="tns:Pay_Record" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pay_Record">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="merchantId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="payerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payerEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payerTelephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderDatetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="productPrice" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="productNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="productId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="productDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ext1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ext2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mchtOrderId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pay_status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="paydatetime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="creation_time" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="payType" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPayRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPayRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DonePayRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="orderNO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pay_status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="paydatetime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="payType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DonePayRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DonePayRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Withdraw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Money" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankCardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WithdrawResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoneWithdraw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jm" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="record" type="tns:SinglePay_Record" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SinglePay_Record">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="merchantId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderDatetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="amt" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ext1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ext2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="signlePay_status" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="singlePaydatetime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="creationTime" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DoneWithdrawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DoneWithdrawResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWS_Accounts_AgentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="B1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="B2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fanwei" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWS_Accounts_AgentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWS_Accounts_AgentListResult" type="tns:ArrayOfWS_Accounts_Agent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWS_Accounts_Agent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WS_Accounts_Agent" nillable="true" type="tns:WS_Accounts_Agent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WS_Accounts_Agent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountParentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountParentName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentSSC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoginCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGroupMoney">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupMoneyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGroupMoneyResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAccountRegInfoSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="tns:AccountRegInfoSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountRegInfoSet">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="No" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentSSC" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercent11X5" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentPercentDPC" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAccountRegInfoSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAccountRegInfoSetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountRegInfoSetList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountRegInfoSetListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountRegInfoSetListResult" type="tns:ArrayOfAccountRegInfoSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAccountRegInfoSet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccountRegInfoSet" nillable="true" type="tns:AccountRegInfoSet" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegAccountBySet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jm" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AccountRegInfoSetId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoneyPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NickName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegAccountBySetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegAccountBySetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAccountRegInfoSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="tns:AccountRegInfoSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditAccountRegInfoSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditAccountRegInfoSetResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginOnSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginOn" />
+  </wsdl:message>
+  <wsdl:message name="LoginOnSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginOnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryList" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryPlayListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryPlayList" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryPlayListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryPlayListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryNextInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryNextInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryNextInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryNextInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryHistroyInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLotteryHistroyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLotteryHistroyInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLotteryHistroyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateTimeNowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDateTimeNow" />
+  </wsdl:message>
+  <wsdl:message name="GetDateTimeNowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateTimeNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBetInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBetInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBetInfo" />
+  </wsdl:message>
+  <wsdl:message name="SendBetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBusinessSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountBusiness" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountBusinessSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProvincesListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProvincesList" />
+  </wsdl:message>
+  <wsdl:message name="GetProvincesListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProvincesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCitiesList" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCitiesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="BindBankCardSoapIn">
+    <wsdl:part name="parameters" element="tns:BindBankCard" />
+  </wsdl:message>
+  <wsdl:message name="BindBankCardSoapOut">
+    <wsdl:part name="parameters" element="tns:BindBankCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBankCardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBankCard" />
+  </wsdl:message>
+  <wsdl:message name="GetBankCardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBankCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditLoginPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:EditLoginPwd" />
+  </wsdl:message>
+  <wsdl:message name="EditLoginPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:EditLoginPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditMoneyPwdSoapIn">
+    <wsdl:part name="parameters" element="tns:EditMoneyPwd" />
+  </wsdl:message>
+  <wsdl:message name="EditMoneyPwdSoapOut">
+    <wsdl:part name="parameters" element="tns:EditMoneyPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditNickNameSoapIn">
+    <wsdl:part name="parameters" element="tns:EditNickName" />
+  </wsdl:message>
+  <wsdl:message name="EditNickNameSoapOut">
+    <wsdl:part name="parameters" element="tns:EditNickNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="LockBankCardSoapIn">
+    <wsdl:part name="parameters" element="tns:LockBankCard" />
+  </wsdl:message>
+  <wsdl:message name="LockBankCardSoapOut">
+    <wsdl:part name="parameters" element="tns:LockBankCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegChildAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:RegChildAccount" />
+  </wsdl:message>
+  <wsdl:message name="RegChildAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:RegChildAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsExistsLoginNameSoapIn">
+    <wsdl:part name="parameters" element="tns:IsExistsLoginName" />
+  </wsdl:message>
+  <wsdl:message name="IsExistsLoginNameSoapOut">
+    <wsdl:part name="parameters" element="tns:IsExistsLoginNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoList1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetBetInfoList1" />
+  </wsdl:message>
+  <wsdl:message name="GetBetInfoList1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetBetInfoList1Response" />
+  </wsdl:message>
+  <wsdl:message name="AddPayRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPayRecord" />
+  </wsdl:message>
+  <wsdl:message name="AddPayRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPayRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DonePayRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DonePayRecord" />
+  </wsdl:message>
+  <wsdl:message name="DonePayRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DonePayRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawSoapIn">
+    <wsdl:part name="parameters" element="tns:Withdraw" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawSoapOut">
+    <wsdl:part name="parameters" element="tns:WithdrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoneWithdrawSoapIn">
+    <wsdl:part name="parameters" element="tns:DoneWithdraw" />
+  </wsdl:message>
+  <wsdl:message name="DoneWithdrawSoapOut">
+    <wsdl:part name="parameters" element="tns:DoneWithdrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWS_Accounts_AgentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWS_Accounts_AgentList" />
+  </wsdl:message>
+  <wsdl:message name="GetWS_Accounts_AgentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWS_Accounts_AgentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupMoneySoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupMoney" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupMoneySoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountRegInfoSetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAccountRegInfoSet" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountRegInfoSetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAccountRegInfoSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountRegInfoSetListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountRegInfoSetList" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountRegInfoSetListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountRegInfoSetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegAccountBySetSoapIn">
+    <wsdl:part name="parameters" element="tns:RegAccountBySet" />
+  </wsdl:message>
+  <wsdl:message name="RegAccountBySetSoapOut">
+    <wsdl:part name="parameters" element="tns:RegAccountBySetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditAccountRegInfoSetSoapIn">
+    <wsdl:part name="parameters" element="tns:EditAccountRegInfoSet" />
+  </wsdl:message>
+  <wsdl:message name="EditAccountRegInfoSetSoapOut">
+    <wsdl:part name="parameters" element="tns:EditAccountRegInfoSetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <wsdl:input message="tns:LoginOnSoapIn" />
+      <wsdl:output message="tns:LoginOnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <wsdl:input message="tns:GetLotteryListSoapIn" />
+      <wsdl:output message="tns:GetLotteryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <wsdl:input message="tns:GetLotteryPlayListSoapIn" />
+      <wsdl:output message="tns:GetLotteryPlayListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryNextInfo">
+      <wsdl:input message="tns:GetLotteryNextInfoSoapIn" />
+      <wsdl:output message="tns:GetLotteryNextInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryHistroyInfo">
+      <wsdl:input message="tns:GetLotteryHistroyInfoSoapIn" />
+      <wsdl:output message="tns:GetLotteryHistroyInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeNow">
+      <wsdl:input message="tns:GetDateTimeNowSoapIn" />
+      <wsdl:output message="tns:GetDateTimeNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList">
+      <wsdl:input message="tns:GetBetInfoListSoapIn" />
+      <wsdl:output message="tns:GetBetInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfo">
+      <wsdl:input message="tns:GetBetInfoSoapIn" />
+      <wsdl:output message="tns:GetBetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBetInfo">
+      <wsdl:input message="tns:SendBetInfoSoapIn" />
+      <wsdl:output message="tns:SendBetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBusiness">
+      <wsdl:input message="tns:GetAccountBusinessSoapIn" />
+      <wsdl:output message="tns:GetAccountBusinessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincesList">
+      <wsdl:input message="tns:GetProvincesListSoapIn" />
+      <wsdl:output message="tns:GetProvincesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesList">
+      <wsdl:input message="tns:GetCitiesListSoapIn" />
+      <wsdl:output message="tns:GetCitiesListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BindBankCard">
+      <wsdl:input message="tns:BindBankCardSoapIn" />
+      <wsdl:output message="tns:BindBankCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCard">
+      <wsdl:input message="tns:GetBankCardSoapIn" />
+      <wsdl:output message="tns:GetBankCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLoginPwd">
+      <wsdl:input message="tns:EditLoginPwdSoapIn" />
+      <wsdl:output message="tns:EditLoginPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditMoneyPwd">
+      <wsdl:input message="tns:EditMoneyPwdSoapIn" />
+      <wsdl:output message="tns:EditMoneyPwdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditNickName">
+      <wsdl:input message="tns:EditNickNameSoapIn" />
+      <wsdl:output message="tns:EditNickNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LockBankCard">
+      <wsdl:input message="tns:LockBankCardSoapIn" />
+      <wsdl:output message="tns:LockBankCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegChildAccount">
+      <wsdl:input message="tns:RegChildAccountSoapIn" />
+      <wsdl:output message="tns:RegChildAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsLoginName">
+      <wsdl:input message="tns:IsExistsLoginNameSoapIn" />
+      <wsdl:output message="tns:IsExistsLoginNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList1">
+      <wsdl:input message="tns:GetBetInfoList1SoapIn" />
+      <wsdl:output message="tns:GetBetInfoList1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPayRecord">
+      <wsdl:input message="tns:AddPayRecordSoapIn" />
+      <wsdl:output message="tns:AddPayRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DonePayRecord">
+      <wsdl:input message="tns:DonePayRecordSoapIn" />
+      <wsdl:output message="tns:DonePayRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdraw">
+      <wsdl:input message="tns:WithdrawSoapIn" />
+      <wsdl:output message="tns:WithdrawSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoneWithdraw">
+      <wsdl:input message="tns:DoneWithdrawSoapIn" />
+      <wsdl:output message="tns:DoneWithdrawSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWS_Accounts_AgentList">
+      <wsdl:input message="tns:GetWS_Accounts_AgentListSoapIn" />
+      <wsdl:output message="tns:GetWS_Accounts_AgentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupMoney">
+      <wsdl:input message="tns:GetGroupMoneySoapIn" />
+      <wsdl:output message="tns:GetGroupMoneySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountRegInfoSet">
+      <wsdl:input message="tns:AddAccountRegInfoSetSoapIn" />
+      <wsdl:output message="tns:AddAccountRegInfoSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountRegInfoSetList">
+      <wsdl:input message="tns:GetAccountRegInfoSetListSoapIn" />
+      <wsdl:output message="tns:GetAccountRegInfoSetListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegAccountBySet">
+      <wsdl:input message="tns:RegAccountBySetSoapIn" />
+      <wsdl:output message="tns:RegAccountBySetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditAccountRegInfoSet">
+      <wsdl:input message="tns:EditAccountRegInfoSetSoapIn" />
+      <wsdl:output message="tns:EditAccountRegInfoSetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://XY.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <soap:operation soapAction="http://XY.org/LoginOn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://XY.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <soap:operation soapAction="http://XY.org/GetLotteryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <soap:operation soapAction="http://XY.org/GetLotteryPlayList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryNextInfo">
+      <soap:operation soapAction="http://XY.org/GetLotteryNextInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryHistroyInfo">
+      <soap:operation soapAction="http://XY.org/GetLotteryHistroyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeNow">
+      <soap:operation soapAction="http://XY.org/GetDateTimeNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList">
+      <soap:operation soapAction="http://XY.org/GetBetInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfo">
+      <soap:operation soapAction="http://XY.org/GetBetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBetInfo">
+      <soap:operation soapAction="http://XY.org/SendBetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBusiness">
+      <soap:operation soapAction="http://XY.org/GetAccountBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincesList">
+      <soap:operation soapAction="http://XY.org/GetProvincesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesList">
+      <soap:operation soapAction="http://XY.org/GetCitiesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindBankCard">
+      <soap:operation soapAction="http://XY.org/BindBankCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCard">
+      <soap:operation soapAction="http://XY.org/GetBankCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLoginPwd">
+      <soap:operation soapAction="http://XY.org/EditLoginPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMoneyPwd">
+      <soap:operation soapAction="http://XY.org/EditMoneyPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNickName">
+      <soap:operation soapAction="http://XY.org/EditNickName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockBankCard">
+      <soap:operation soapAction="http://XY.org/LockBankCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegChildAccount">
+      <soap:operation soapAction="http://XY.org/RegChildAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsLoginName">
+      <soap:operation soapAction="http://XY.org/IsExistsLoginName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList1">
+      <soap:operation soapAction="http://XY.org/GetBetInfoList1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPayRecord">
+      <soap:operation soapAction="http://XY.org/AddPayRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DonePayRecord">
+      <soap:operation soapAction="http://XY.org/DonePayRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdraw">
+      <soap:operation soapAction="http://XY.org/Withdraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoneWithdraw">
+      <soap:operation soapAction="http://XY.org/DoneWithdraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWS_Accounts_AgentList">
+      <soap:operation soapAction="http://XY.org/GetWS_Accounts_AgentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupMoney">
+      <soap:operation soapAction="http://XY.org/GetGroupMoney" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountRegInfoSet">
+      <soap:operation soapAction="http://XY.org/AddAccountRegInfoSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountRegInfoSetList">
+      <soap:operation soapAction="http://XY.org/GetAccountRegInfoSetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegAccountBySet">
+      <soap:operation soapAction="http://XY.org/RegAccountBySet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAccountRegInfoSet">
+      <soap:operation soapAction="http://XY.org/EditAccountRegInfoSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://XY.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginOn">
+      <soap12:operation soapAction="http://XY.org/LoginOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://XY.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryList">
+      <soap12:operation soapAction="http://XY.org/GetLotteryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryPlayList">
+      <soap12:operation soapAction="http://XY.org/GetLotteryPlayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryNextInfo">
+      <soap12:operation soapAction="http://XY.org/GetLotteryNextInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLotteryHistroyInfo">
+      <soap12:operation soapAction="http://XY.org/GetLotteryHistroyInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTimeNow">
+      <soap12:operation soapAction="http://XY.org/GetDateTimeNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList">
+      <soap12:operation soapAction="http://XY.org/GetBetInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfo">
+      <soap12:operation soapAction="http://XY.org/GetBetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBetInfo">
+      <soap12:operation soapAction="http://XY.org/SendBetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountBusiness">
+      <soap12:operation soapAction="http://XY.org/GetAccountBusiness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvincesList">
+      <soap12:operation soapAction="http://XY.org/GetProvincesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesList">
+      <soap12:operation soapAction="http://XY.org/GetCitiesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindBankCard">
+      <soap12:operation soapAction="http://XY.org/BindBankCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankCard">
+      <soap12:operation soapAction="http://XY.org/GetBankCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLoginPwd">
+      <soap12:operation soapAction="http://XY.org/EditLoginPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditMoneyPwd">
+      <soap12:operation soapAction="http://XY.org/EditMoneyPwd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditNickName">
+      <soap12:operation soapAction="http://XY.org/EditNickName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockBankCard">
+      <soap12:operation soapAction="http://XY.org/LockBankCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegChildAccount">
+      <soap12:operation soapAction="http://XY.org/RegChildAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsLoginName">
+      <soap12:operation soapAction="http://XY.org/IsExistsLoginName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBetInfoList1">
+      <soap12:operation soapAction="http://XY.org/GetBetInfoList1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPayRecord">
+      <soap12:operation soapAction="http://XY.org/AddPayRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DonePayRecord">
+      <soap12:operation soapAction="http://XY.org/DonePayRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdraw">
+      <soap12:operation soapAction="http://XY.org/Withdraw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoneWithdraw">
+      <soap12:operation soapAction="http://XY.org/DoneWithdraw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWS_Accounts_AgentList">
+      <soap12:operation soapAction="http://XY.org/GetWS_Accounts_AgentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupMoney">
+      <soap12:operation soapAction="http://XY.org/GetGroupMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountRegInfoSet">
+      <soap12:operation soapAction="http://XY.org/AddAccountRegInfoSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountRegInfoSetList">
+      <soap12:operation soapAction="http://XY.org/GetAccountRegInfoSetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegAccountBySet">
+      <soap12:operation soapAction="http://XY.org/RegAccountBySet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditAccountRegInfoSet">
+      <soap12:operation soapAction="http://XY.org/EditAccountRegInfoSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:49690/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:49690/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

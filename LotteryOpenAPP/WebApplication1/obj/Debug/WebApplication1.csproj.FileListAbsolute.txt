@@ -1,0 +1,12 @@
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\WebApplication1.dll.config
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\WebApplication1.dll
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\WebApplication1.pdb
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\EntityFramework.dll
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\EntityFramework.SqlServer.dll
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\LotteryModel.pdb
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\EntityFramework.xml
+E:\JIX\LotteryOpenAPP\WebApplication1\bin\EntityFramework.SqlServer.xml
+E:\JIX\LotteryOpenAPP\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\WebApplication1\obj\Debug\WebApplication1.dll
+E:\JIX\LotteryOpenAPP\WebApplication1\obj\Debug\WebApplication1.pdb

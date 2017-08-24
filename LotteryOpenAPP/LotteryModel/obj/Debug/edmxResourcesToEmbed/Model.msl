@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LotteryAPPModelStoreContainer" CdmEntityContainer="LotteryAPPEntities">
+    <FunctionImportMapping FunctionImportName="ChangeAccountMoney" FunctionName="LotteryAPPModel.Store.ChangeAccountMoney" />
+    <EntitySetMapping Name="AccountBusiness">
+      <EntityTypeMapping TypeName="LotteryAPPModel.AccountBusiness">
+        <MappingFragment StoreEntitySet="AccountBusiness">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="PayAfter" ColumnName="PayAfter" />
+          <ScalarProperty Name="PayBefore" ColumnName="PayBefore" />
+          <ScalarProperty Name="PayOut" ColumnName="PayOut" />
+          <ScalarProperty Name="PayIn" ColumnName="PayIn" />
+          <ScalarProperty Name="BusinessTypeId" ColumnName="BusinessTypeId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="LotteryAPPModel.Accounts">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AccountMoneyPwd" ColumnName="AccountMoneyPwd" />
+          <ScalarProperty Name="BankCardLockStatus" ColumnName="BankCardLockStatus" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="AgentPercentDPC" ColumnName="AgentPercentDPC" />
+          <ScalarProperty Name="AgentPercent11X5" ColumnName="AgentPercent11X5" />
+          <ScalarProperty Name="AgentPercentSSC" ColumnName="AgentPercentSSC" />
+          <ScalarProperty Name="AccountNickname" ColumnName="AccountNickname" />
+          <ScalarProperty Name="AccountParentId" ColumnName="AccountParentId" />
+          <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+          <ScalarProperty Name="AccountPwd" ColumnName="AccountPwd" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BetInfo">
+      <EntityTypeMapping TypeName="LotteryAPPModel.BetInfo">
+        <MappingFragment StoreEntitySet="BetInfo">
+          <ScalarProperty Name="IsWinCancel" ColumnName="IsWinCancel" />
+          <ScalarProperty Name="AddNumNo" ColumnName="AddNumNo" />
+          <ScalarProperty Name="LotteryExcept" ColumnName="LotteryExcept" />
+          <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+          <ScalarProperty Name="IsGetBackPercent" ColumnName="IsGetBackPercent" />
+          <ScalarProperty Name="ChoicePosition" ColumnName="ChoicePosition" />
+          <ScalarProperty Name="BackTime" ColumnName="BackTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MaxBackMoney" ColumnName="MaxBackMoney" />
+          <ScalarProperty Name="GetBackPercent" ColumnName="GetBackPercent" />
+          <ScalarProperty Name="WinMoney" ColumnName="WinMoney" />
+          <ScalarProperty Name="WinUnit" ColumnName="WinUnit" />
+          <ScalarProperty Name="BackMoney" ColumnName="BackMoney" />
+          <ScalarProperty Name="BetTimes" ColumnName="BetTimes" />
+          <ScalarProperty Name="BetMoney" ColumnName="BetMoney" />
+          <ScalarProperty Name="BetUnit" ColumnName="BetUnit" />
+          <ScalarProperty Name="BetPlayTypeCode" ColumnName="BetPlayTypeCode" />
+          <ScalarProperty Name="BetNum" ColumnName="BetNum" />
+          <ScalarProperty Name="ResultType" ColumnName="ResultType" />
+          <ScalarProperty Name="LotteryOpenId" ColumnName="LotteryOpenId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="LotteryAPPModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryOffcialSchedule">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOffcialSchedule">
+        <MappingFragment StoreEntitySet="LotteryOffcialSchedule">
+          <ScalarProperty Name="ScheduleOpenCode" ColumnName="ScheduleOpenCode" />
+          <ScalarProperty Name="ScheduleOpenTime" ColumnName="ScheduleOpenTime" />
+          <ScalarProperty Name="Expect" ColumnName="Expect" />
+          <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryOpen">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOpen">
+        <MappingFragment StoreEntitySet="LotteryOpen">
+          <ScalarProperty Name="RerollCount" ColumnName="RerollCount" />
+          <ScalarProperty Name="OpenStatus" ColumnName="OpenStatus" />
+          <ScalarProperty Name="ScheduleOpenTime" ColumnName="ScheduleOpenTime" />
+          <ScalarProperty Name="ScheduleOpenCode" ColumnName="ScheduleOpenCode" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="OpenCode" ColumnName="OpenCode" />
+          <ScalarProperty Name="Expect" ColumnName="Expect" />
+          <ScalarProperty Name="ExpectDate" ColumnName="ExpectDate" />
+          <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryOpenInfo">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOpenInfo">
+        <MappingFragment StoreEntitySet="LotteryOpenInfo">
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="OpenCode" ColumnName="OpenCode" />
+          <ScalarProperty Name="Expect" ColumnName="Expect" />
+          <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryPlays">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPlays">
+        <MappingFragment StoreEntitySet="LotteryPlays">
+          <ScalarProperty Name="PayBack" ColumnName="PayBack" />
+          <ScalarProperty Name="PrizeClass" ColumnName="PrizeClass" />
+          <ScalarProperty Name="LotteryPlayName" ColumnName="LotteryPlayName" />
+          <ScalarProperty Name="LotteryPlayId" ColumnName="LotteryPlayId" />
+          <ScalarProperty Name="LotteryType" ColumnName="LotteryType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryPrizePool">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPrizePool">
+        <MappingFragment StoreEntitySet="LotteryPrizePool">
+          <ScalarProperty Name="PoolMoney" ColumnName="PoolMoney" />
+          <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LotteryPrizePoolInfo">
+      <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPrizePoolInfo">
+        <MappingFragment StoreEntitySet="LotteryPrizePoolInfo">
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+          <ScalarProperty Name="TotalAgenBack" ColumnName="TotalAgenBack" />
+          <ScalarProperty Name="TotalBack" ColumnName="TotalBack" />
+          <ScalarProperty Name="TotalBet" ColumnName="TotalBet" />
+          <ScalarProperty Name="LotteryOpenId" ColumnName="LotteryOpenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotterys">
+      <EntityTypeMapping TypeName="LotteryAPPModel.Lotterys">
+        <MappingFragment StoreEntitySet="Lotterys">
+          <ScalarProperty Name="ExceptOneDay" ColumnName="ExceptOneDay" />
+          <ScalarProperty Name="ExceptLength" ColumnName="ExceptLength" />
+          <ScalarProperty Name="BetweenMinute" ColumnName="BetweenMinute" />
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+          <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+          <ScalarProperty Name="LotteryCode" ColumnName="LotteryCode" />
+          <ScalarProperty Name="LotteryType" ColumnName="LotteryType" />
+          <ScalarProperty Name="LotteryName" ColumnName="LotteryName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="LotteryAPPModel.Provinces">
+        <MappingFragment StoreEntitySet="Provinces">
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vie_NowTime">
+      <EntityTypeMapping TypeName="LotteryAPPModel.vie_NowTime">
+        <MappingFragment StoreEntitySet="vie_NowTime">
+          <ScalarProperty Name="NowTime" ColumnName="NowTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_Record">
+      <EntityTypeMapping TypeName="LotteryAPPModel.Pay_Record">
+        <MappingFragment StoreEntitySet="Pay_Record">
+          <ScalarProperty Name="payType" ColumnName="payType" />
+          <ScalarProperty Name="creation_time" ColumnName="creation_time" />
+          <ScalarProperty Name="paydatetime" ColumnName="paydatetime" />
+          <ScalarProperty Name="pay_status" ColumnName="pay_status" />
+          <ScalarProperty Name="mchtOrderId" ColumnName="mchtOrderId" />
+          <ScalarProperty Name="ext2" ColumnName="ext2" />
+          <ScalarProperty Name="ext1" ColumnName="ext1" />
+          <ScalarProperty Name="productDesc" ColumnName="productDesc" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="productNum" ColumnName="productNum" />
+          <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="orderDatetime" ColumnName="orderDatetime" />
+          <ScalarProperty Name="payerTelephone" ColumnName="payerTelephone" />
+          <ScalarProperty Name="payerEmail" ColumnName="payerEmail" />
+          <ScalarProperty Name="payerName" ColumnName="payerName" />
+          <ScalarProperty Name="orderAmount" ColumnName="orderAmount" />
+          <ScalarProperty Name="orderNO" ColumnName="orderNO" />
+          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountRecharge">
+      <EntityTypeMapping TypeName="LotteryAPPModel.AccountRecharge">
+        <MappingFragment StoreEntitySet="AccountRecharge">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinglePay_Record">
+      <EntityTypeMapping TypeName="LotteryAPPModel.SinglePay_Record">
+        <MappingFragment StoreEntitySet="SinglePay_Record">
+          <ScalarProperty Name="creationTime" ColumnName="creationTime" />
+          <ScalarProperty Name="singlePaydatetime" ColumnName="singlePaydatetime" />
+          <ScalarProperty Name="signlePay_status" ColumnName="signlePay_status" />
+          <ScalarProperty Name="ext2" ColumnName="ext2" />
+          <ScalarProperty Name="ext1" ColumnName="ext1" />
+          <ScalarProperty Name="amt" ColumnName="amt" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="bankNo" ColumnName="bankNo" />
+          <ScalarProperty Name="accountType" ColumnName="accountType" />
+          <ScalarProperty Name="accountName" ColumnName="accountName" />
+          <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+          <ScalarProperty Name="orderDatetime" ColumnName="orderDatetime" />
+          <ScalarProperty Name="orderNO" ColumnName="orderNO" />
+          <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountWithdraw">
+      <EntityTypeMapping TypeName="LotteryAPPModel.AccountWithdraw">
+        <MappingFragment StoreEntitySet="AccountWithdraw">
+          <ScalarProperty Name="auditTime" ColumnName="auditTime" />
+          <ScalarProperty Name="auditor" ColumnName="auditor" />
+          <ScalarProperty Name="isAutoPay" ColumnName="isAutoPay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="BankCardNo" ColumnName="BankCardNo" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountRegInfoSet">
+      <EntityTypeMapping TypeName="LotteryAPPModel.AccountRegInfoSet">
+        <MappingFragment StoreEntitySet="AccountRegInfoSet">
+          <ScalarProperty Name="AgentPercentDPC" ColumnName="AgentPercentDPC" />
+          <ScalarProperty Name="AgentPercent11X5" ColumnName="AgentPercent11X5" />
+          <ScalarProperty Name="AgentPercentSSC" ColumnName="AgentPercentSSC" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankCard">
+      <EntityTypeMapping TypeName="LotteryAPPModel.BankCard">
+        <MappingFragment StoreEntitySet="BankCard">
+          <ScalarProperty Name="BankChildName" ColumnName="BankChildName" />
+          <ScalarProperty Name="BankNo" ColumnName="BankNo" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="OpenCardName" ColumnName="OpenCardName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

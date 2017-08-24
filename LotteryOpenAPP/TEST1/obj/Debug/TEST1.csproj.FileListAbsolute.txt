@@ -1,0 +1,9 @@
+E:\JIX\LotteryOpenAPP\TEST1\bin\Debug\TEST1.exe.config
+E:\JIX\LotteryOpenAPP\TEST1\bin\Debug\TEST1.exe
+E:\JIX\LotteryOpenAPP\TEST1\bin\Debug\TEST1.pdb
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.Form1.resources
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.Properties.Resources.resources
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.csproj.GenerateResource.Cache
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.exe
+E:\JIX\LotteryOpenAPP\TEST1\obj\Debug\TEST1.pdb

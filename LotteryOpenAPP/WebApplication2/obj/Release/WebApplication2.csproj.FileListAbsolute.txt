@@ -1,0 +1,6 @@
+E:\JIX\LotteryOpenAPP\WebApplication2\bin\WebApplication2.dll.config
+E:\JIX\LotteryOpenAPP\WebApplication2\bin\WebApplication2.dll
+E:\JIX\LotteryOpenAPP\WebApplication2\bin\WebApplication2.pdb
+E:\JIX\LotteryOpenAPP\WebApplication2\obj\Release\WebApplication2.csprojResolveAssemblyReference.cache
+E:\JIX\LotteryOpenAPP\WebApplication2\obj\Release\WebApplication2.dll
+E:\JIX\LotteryOpenAPP\WebApplication2\obj\Release\WebApplication2.pdb

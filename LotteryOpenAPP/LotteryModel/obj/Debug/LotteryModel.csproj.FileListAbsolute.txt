@@ -1,0 +1,10 @@
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\LotteryModel.dll.config
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\LotteryModel.pdb
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\EntityFramework.dll
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\EntityFramework.SqlServer.dll
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\EntityFramework.xml
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\EntityFramework.SqlServer.xml
+E:\JIX\LotteryOpenAPP\LotteryModel\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\JIX\LotteryOpenAPP\LotteryModel\obj\Debug\LotteryModel.dll
+E:\JIX\LotteryOpenAPP\LotteryModel\obj\Debug\LotteryModel.pdb

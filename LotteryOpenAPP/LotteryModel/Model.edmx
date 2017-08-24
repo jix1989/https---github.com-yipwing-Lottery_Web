@@ -1,0 +1,1170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LotteryAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="BusinessTypeId" Type="int" Nullable="false" />
+          <Property Name="PayIn" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PayOut" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PayBefore" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PayAfter" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="EventId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="AccountRecharge">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountRegInfoSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="AgentPercentSSC" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="AgentPercent11X5" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="AgentPercentDPC" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccountBalance" Type="decimal" Precision="20" Scale="4" Nullable="false" />
+          <Property Name="AccountParentId" Type="int" Nullable="false" />
+          <Property Name="AccountNickname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AgentPercentSSC" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="AgentPercent11X5" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="AgentPercentDPC" Type="decimal" Precision="18" Scale="1" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="AccountStatus" Type="int" Nullable="false" />
+          <Property Name="LoginCount" Type="int" Nullable="false" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="BankCardLockStatus" Type="bit" Nullable="false" />
+          <Property Name="AccountMoneyPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AccountWithdraw">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BankCardNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Money" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="isAutoPay" Type="bit" Nullable="false" />
+          <Property Name="auditor" Type="nvarchar" MaxLength="50" />
+          <Property Name="auditTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BankCard">
+          <Key>
+            <PropertyRef Name="AccountId" />
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CardNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatTime" Type="datetime" Nullable="false" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenCardName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="BankNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankChildName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BetInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="LotteryOpenId" Type="bigint" />
+          <Property Name="ResultType" Type="int" Nullable="false" />
+          <Property Name="BetNum" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BetPlayTypeCode" Type="int" Nullable="false" />
+          <Property Name="BetUnit" Type="int" Nullable="false" />
+          <Property Name="BetMoney" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="BetTimes" Type="int" Nullable="false" />
+          <Property Name="BackMoney" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="WinUnit" Type="int" Nullable="false" />
+          <Property Name="WinMoney" Type="decimal" Precision="20" Scale="4" StoreGeneratedPattern="Computed" />
+          <Property Name="GetBackPercent" Type="decimal" Precision="8" Scale="1" Nullable="false" />
+          <Property Name="MaxBackMoney" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="BackTime" Type="datetime" />
+          <Property Name="ChoicePosition" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsGetBackPercent" Type="bit" Nullable="false" />
+          <Property Name="LotteryId" Type="int" Nullable="false" />
+          <Property Name="LotteryExcept" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddNumNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsWinCancel" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceId" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryOffcialSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LotteryId" Type="int" Nullable="false" />
+          <Property Name="Expect" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ScheduleOpenTime" Type="datetime" Nullable="false" />
+          <Property Name="ScheduleOpenCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LotteryOpen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LotteryId" Type="int" Nullable="false" />
+          <Property Name="ExpectDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Expect" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="OpenTime" Type="datetime" />
+          <Property Name="ScheduleOpenCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ScheduleOpenTime" Type="datetime" Nullable="false" />
+          <Property Name="OpenStatus" Type="int" Nullable="false" />
+          <Property Name="RerollCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryOpenInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LotteryId" Type="int" Nullable="false" />
+          <Property Name="Expect" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OpenTime" Type="datetime" Nullable="false" />
+          <Property Name="OpenDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryPlays">
+          <Key>
+            <PropertyRef Name="LotteryType" />
+            <PropertyRef Name="LotteryPlayId" />
+          </Key>
+          <Property Name="LotteryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LotteryPlayId" Type="int" Nullable="false" />
+          <Property Name="LotteryPlayName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrizeClass" Type="nvarchar" MaxLength="200" />
+          <Property Name="PayBack" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LotteryPrizePool">
+          <Key>
+            <PropertyRef Name="LotteryId" />
+          </Key>
+          <Property Name="LotteryId" Type="int" Nullable="false" />
+          <Property Name="PoolMoney" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryPrizePoolInfo">
+          <Key>
+            <PropertyRef Name="LotteryOpenId" />
+          </Key>
+          <Property Name="LotteryOpenId" Type="bigint" Nullable="false" />
+          <Property Name="TotalBet" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalBack" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="TotalAgenBack" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="Profit" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lotterys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LotteryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LotteryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LotteryCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsPrivate" Type="bit" Nullable="false" />
+          <Property Name="TimeStart" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="TimeEnd" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="BetweenMinute" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="ExceptLength" Type="int" />
+          <Property Name="ExceptOneDay" Type="int" />
+        </EntityType>
+        <EntityType Name="Pay_Record">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="merchantId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderNO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderAmount" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="payerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="payerEmail" Type="varchar" MaxLength="20" />
+          <Property Name="payerTelephone" Type="varchar" MaxLength="20" />
+          <Property Name="orderDatetime" Type="varchar" MaxLength="14" />
+          <Property Name="productName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="productPrice" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="productNum" Type="int" Nullable="false" />
+          <Property Name="productId" Type="varchar" MaxLength="100" />
+          <Property Name="productDesc" Type="nvarchar" MaxLength="400" />
+          <Property Name="ext1" Type="varchar" MaxLength="500" />
+          <Property Name="ext2" Type="varchar" MaxLength="500" />
+          <Property Name="mchtOrderId" Type="varchar" MaxLength="50" />
+          <Property Name="pay_status" Type="int" Nullable="false" />
+          <Property Name="payType" Type="int" />
+          <Property Name="paydatetime" Type="varchar" MaxLength="14" />
+          <Property Name="creation_time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provinces">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SinglePay_Record">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="merchantId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderNO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderDatetime" Type="varchar" MaxLength="14" />
+          <Property Name="accountNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="accountName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="accountType" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="bankNo" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="bankName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="amt" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="ext1" Type="varchar" MaxLength="500" />
+          <Property Name="ext2" Type="varchar" MaxLength="500" />
+          <Property Name="signlePay_status" Type="tinyint" Nullable="false" />
+          <Property Name="singlePaydatetime" Type="varchar" MaxLength="14" />
+          <Property Name="creationTime" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“LotteryAPP.dbo.vie_NowTime”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="vie_NowTime">
+          <Key>
+            <PropertyRef Name="NowTime" />
+          </Key>
+          <Property Name="NowTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AccountBusiness_Accounts">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="AccountBusiness" Type="Self.AccountBusiness" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountBusiness">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BankCard_Accounts">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="BankCard" Type="Self.BankCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BankCard">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BetInfo_Accounts">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
+          <End Role="BetInfo" Type="Self.BetInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BetInfo">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOffcialSchedule_Lotterys">
+          <End Role="Lotterys" Type="Self.Lotterys" Multiplicity="1" />
+          <End Role="LotteryOffcialSchedule" Type="Self.LotteryOffcialSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotterys">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOffcialSchedule">
+              <PropertyRef Name="LotteryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOpenInfo_LotteryOpenInfo">
+          <End Role="LotteryOpenInfo" Type="Self.LotteryOpenInfo" Multiplicity="1" />
+          <End Role="LotteryOpenInfo1" Type="Self.LotteryOpenInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryOpenInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOpenInfo1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOpenInfo_Lotterys">
+          <End Role="Lotterys" Type="Self.Lotterys" Multiplicity="1" />
+          <End Role="LotteryOpenInfo" Type="Self.LotteryOpenInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotterys">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOpenInfo">
+              <PropertyRef Name="LotteryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryPrizePool_LotteryOpen">
+          <End Role="LotteryOpenInfo" Type="Self.LotteryOpenInfo" Multiplicity="1" />
+          <End Role="LotteryPrizePoolInfo" Type="Self.LotteryPrizePoolInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryOpenInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryPrizePoolInfo">
+              <PropertyRef Name="LotteryOpenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ChangeAccountMoney" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="count" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="LotteryAPPModelStoreContainer">
+          <EntitySet Name="AccountBusiness" EntityType="Self.AccountBusiness" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountRecharge" EntityType="Self.AccountRecharge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountRegInfoSet" EntityType="Self.AccountRegInfoSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountWithdraw" EntityType="Self.AccountWithdraw" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankCard" EntityType="Self.BankCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BetInfo" EntityType="Self.BetInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryOffcialSchedule" EntityType="Self.LotteryOffcialSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryOpen" EntityType="Self.LotteryOpen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryOpenInfo" EntityType="Self.LotteryOpenInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryPlays" EntityType="Self.LotteryPlays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryPrizePool" EntityType="Self.LotteryPrizePool" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LotteryPrizePoolInfo" EntityType="Self.LotteryPrizePoolInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lotterys" EntityType="Self.Lotterys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pay_Record" EntityType="Self.Pay_Record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provinces" EntityType="Self.Provinces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinglePay_Record" EntityType="Self.SinglePay_Record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vie_NowTime" EntityType="Self.vie_NowTime" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vie_NowTime].[NowTime] AS [NowTime]
+    FROM [dbo].[vie_NowTime] AS [vie_NowTime]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AccountBusiness_Accounts" Association="Self.FK_AccountBusiness_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AccountBusiness" EntitySet="AccountBusiness" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BankCard_Accounts" Association="Self.FK_BankCard_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="BankCard" EntitySet="BankCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BetInfo_Accounts" Association="Self.FK_BetInfo_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="BetInfo" EntitySet="BetInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOffcialSchedule_Lotterys" Association="Self.FK_LotteryOffcialSchedule_Lotterys">
+            <End Role="Lotterys" EntitySet="Lotterys" />
+            <End Role="LotteryOffcialSchedule" EntitySet="LotteryOffcialSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOpenInfo_LotteryOpenInfo" Association="Self.FK_LotteryOpenInfo_LotteryOpenInfo">
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+            <End Role="LotteryOpenInfo1" EntitySet="LotteryOpenInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOpenInfo_Lotterys" Association="Self.FK_LotteryOpenInfo_Lotterys">
+            <End Role="Lotterys" EntitySet="Lotterys" />
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryPrizePool_LotteryOpen" Association="Self.FK_LotteryPrizePool_LotteryOpen">
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+            <End Role="LotteryPrizePoolInfo" EntitySet="LotteryPrizePoolInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LotteryAPPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LotteryAPPEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="ChangeAccountMoney">
+          <Parameter Name="count" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="AccountBusiness" EntityType="LotteryAPPModel.AccountBusiness" />
+          <EntitySet Name="Accounts" EntityType="LotteryAPPModel.Accounts" />
+          <EntitySet Name="BetInfo" EntityType="LotteryAPPModel.BetInfo" />
+          <EntitySet Name="Cities" EntityType="LotteryAPPModel.Cities" />
+          <EntitySet Name="LotteryOffcialSchedule" EntityType="LotteryAPPModel.LotteryOffcialSchedule" />
+          <EntitySet Name="LotteryOpen" EntityType="LotteryAPPModel.LotteryOpen" />
+          <EntitySet Name="LotteryOpenInfo" EntityType="LotteryAPPModel.LotteryOpenInfo" />
+          <EntitySet Name="LotteryPlays" EntityType="LotteryAPPModel.LotteryPlays" />
+          <EntitySet Name="LotteryPrizePool" EntityType="LotteryAPPModel.LotteryPrizePool" />
+          <EntitySet Name="LotteryPrizePoolInfo" EntityType="LotteryAPPModel.LotteryPrizePoolInfo" />
+          <EntitySet Name="Lotterys" EntityType="LotteryAPPModel.Lotterys" />
+          <EntitySet Name="Provinces" EntityType="LotteryAPPModel.Provinces" />
+          <EntitySet Name="vie_NowTime" EntityType="LotteryAPPModel.vie_NowTime" />
+          <AssociationSet Name="FK_AccountBusiness_Accounts" Association="LotteryAPPModel.FK_AccountBusiness_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AccountBusiness" EntitySet="AccountBusiness" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BetInfo_Accounts" Association="LotteryAPPModel.FK_BetInfo_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="BetInfo" EntitySet="BetInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BetInfo_LotteryOpenInfo" Association="LotteryAPPModel.FK_BetInfo_LotteryOpenInfo">
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+            <End Role="BetInfo" EntitySet="BetInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOffcialSchedule_Lotterys" Association="LotteryAPPModel.FK_LotteryOffcialSchedule_Lotterys">
+            <End Role="Lotterys" EntitySet="Lotterys" />
+            <End Role="LotteryOffcialSchedule" EntitySet="LotteryOffcialSchedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryPrizePool_LotteryOpen" Association="LotteryAPPModel.FK_LotteryPrizePool_LotteryOpen">
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+            <End Role="LotteryPrizePoolInfo" EntitySet="LotteryPrizePoolInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOpenInfo_LotteryOpenInfo" Association="LotteryAPPModel.FK_LotteryOpenInfo_LotteryOpenInfo">
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+            <End Role="LotteryOpenInfo1" EntitySet="LotteryOpenInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LotteryOpenInfo_Lotterys" Association="LotteryAPPModel.FK_LotteryOpenInfo_Lotterys">
+            <End Role="Lotterys" EntitySet="Lotterys" />
+            <End Role="LotteryOpenInfo" EntitySet="LotteryOpenInfo" />
+          </AssociationSet>
+          <EntitySet Name="Pay_Record" EntityType="LotteryAPPModel.Pay_Record" />
+          <EntitySet Name="AccountRecharge" EntityType="LotteryAPPModel.AccountRecharge" />
+          <EntitySet Name="SinglePay_Record" EntityType="LotteryAPPModel.SinglePay_Record" />
+          <EntitySet Name="AccountWithdraw" EntityType="LotteryAPPModel.AccountWithdraw" />
+          <EntitySet Name="AccountRegInfoSet" EntityType="LotteryAPPModel.AccountRegInfoSet" />
+          <EntitySet Name="BankCard" EntityType="LotteryAPPModel.BankCard" />
+          <AssociationSet Name="FK_BankCard_Accounts" Association="LotteryAPPModel.FK_BankCard_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="BankCard" EntitySet="BankCard" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="AccountBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BusinessTypeId" Type="Int32" Nullable="false" />
+          <Property Name="PayIn" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PayOut" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PayBefore" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="PayAfter" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="EventId" Type="Int64" />
+          <NavigationProperty Name="Accounts" Relationship="LotteryAPPModel.FK_AccountBusiness_Accounts" FromRole="AccountBusiness" ToRole="Accounts" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountPwd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountBalance" Type="Decimal" Nullable="false" Precision="20" Scale="4" />
+          <Property Name="AccountParentId" Type="Int32" Nullable="false" />
+          <Property Name="AccountNickname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AgentPercentSSC" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="AgentPercent11X5" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="AgentPercentDPC" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccountStatus" Type="Int32" Nullable="false" />
+          <Property Name="LoginCount" Type="Int32" Nullable="false" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="BankCardLockStatus" Type="Boolean" Nullable="false" />
+          <Property Name="AccountMoneyPwd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountBusiness" Relationship="LotteryAPPModel.FK_AccountBusiness_Accounts" FromRole="Accounts" ToRole="AccountBusiness" />
+          <NavigationProperty Name="BetInfo" Relationship="LotteryAPPModel.FK_BetInfo_Accounts" FromRole="Accounts" ToRole="BetInfo" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BankCard" Relationship="LotteryAPPModel.FK_BankCard_Accounts" FromRole="Accounts" ToRole="BankCard" />
+        </EntityType>
+        <EntityType Name="BetInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="LotteryOpenId" Type="Int64" />
+          <Property Name="ResultType" Type="Int32" Nullable="false" />
+          <Property Name="BetNum" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BetPlayTypeCode" Type="Int32" Nullable="false" />
+          <Property Name="BetUnit" Type="Int32" Nullable="false" />
+          <Property Name="BetMoney" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="BetTimes" Type="Int32" Nullable="false" />
+          <Property Name="BackMoney" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="WinUnit" Type="Int32" Nullable="false" />
+          <Property Name="WinMoney" Type="Decimal" Precision="20" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="GetBackPercent" Type="Decimal" Nullable="false" Precision="8" Scale="1" />
+          <Property Name="MaxBackMoney" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BackTime" Type="DateTime" Precision="3" />
+          <Property Name="ChoicePosition" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsGetBackPercent" Type="Boolean" Nullable="false" />
+          <Property Name="LotteryId" Type="Int32" Nullable="false" />
+          <Property Name="LotteryExcept" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="LotteryAPPModel.FK_BetInfo_Accounts" FromRole="BetInfo" ToRole="Accounts" />
+          <NavigationProperty Name="LotteryOpenInfo" Relationship="LotteryAPPModel.FK_BetInfo_LotteryOpenInfo" FromRole="BetInfo" ToRole="LotteryOpenInfo" />
+          <Property Name="AddNumNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsWinCancel" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceId" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LotteryOffcialSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LotteryId" Type="Int32" Nullable="false" />
+          <Property Name="Expect" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleOpenTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ScheduleOpenCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Lotterys" Relationship="LotteryAPPModel.FK_LotteryOffcialSchedule_Lotterys" FromRole="LotteryOffcialSchedule" ToRole="Lotterys" />
+        </EntityType>
+        <EntityType Name="LotteryOpen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LotteryId" Type="Int32" Nullable="false" />
+          <Property Name="ExpectDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expect" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenTime" Type="DateTime" Precision="3" />
+          <Property Name="ScheduleOpenCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleOpenTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OpenStatus" Type="Int32" Nullable="false" />
+          <Property Name="RerollCount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LotteryOpenInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LotteryId" Type="Int32" Nullable="false" />
+          <Property Name="Expect" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OpenDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="BetInfo" Relationship="LotteryAPPModel.FK_BetInfo_LotteryOpenInfo" FromRole="LotteryOpenInfo" ToRole="BetInfo" />
+          <NavigationProperty Name="LotteryPrizePoolInfo" Relationship="LotteryAPPModel.FK_LotteryPrizePool_LotteryOpen" FromRole="LotteryOpenInfo" ToRole="LotteryPrizePoolInfo" />
+          <NavigationProperty Name="LotteryOpenInfo1" Relationship="LotteryAPPModel.FK_LotteryOpenInfo_LotteryOpenInfo" FromRole="LotteryOpenInfo" ToRole="LotteryOpenInfo1" />
+          <NavigationProperty Name="LotteryOpenInfo2" Relationship="LotteryAPPModel.FK_LotteryOpenInfo_LotteryOpenInfo" FromRole="LotteryOpenInfo1" ToRole="LotteryOpenInfo" />
+          <NavigationProperty Name="Lotterys" Relationship="LotteryAPPModel.FK_LotteryOpenInfo_Lotterys" FromRole="LotteryOpenInfo" ToRole="Lotterys" />
+        </EntityType>
+        <EntityType Name="LotteryPlays">
+          <Key>
+            <PropertyRef Name="LotteryType" />
+            <PropertyRef Name="LotteryPlayId" />
+          </Key>
+          <Property Name="LotteryType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LotteryPlayId" Type="Int32" Nullable="false" />
+          <Property Name="LotteryPlayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrizeClass" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PayBack" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="LotteryPrizePool">
+          <Key>
+            <PropertyRef Name="LotteryId" />
+          </Key>
+          <Property Name="LotteryId" Type="Int32" Nullable="false" />
+          <Property Name="PoolMoney" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="LotteryPrizePoolInfo">
+          <Key>
+            <PropertyRef Name="LotteryOpenId" />
+          </Key>
+          <Property Name="LotteryOpenId" Type="Int64" Nullable="false" />
+          <Property Name="TotalBet" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="TotalBack" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="TotalAgenBack" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <Property Name="Profit" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+          <NavigationProperty Name="LotteryOpenInfo" Relationship="LotteryAPPModel.FK_LotteryPrizePool_LotteryOpen" FromRole="LotteryPrizePoolInfo" ToRole="LotteryOpenInfo" />
+        </EntityType>
+        <EntityType Name="Lotterys">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LotteryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LotteryType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LotteryCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsPrivate" Type="Boolean" Nullable="false" />
+          <Property Name="TimeStart" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="TimeEnd" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="BetweenMinute" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="ExceptLength" Type="Int32" />
+          <Property Name="ExceptOneDay" Type="Int32" />
+          <NavigationProperty Name="LotteryOffcialSchedule" Relationship="LotteryAPPModel.FK_LotteryOffcialSchedule_Lotterys" FromRole="Lotterys" ToRole="LotteryOffcialSchedule" />
+          <NavigationProperty Name="LotteryOpenInfo" Relationship="LotteryAPPModel.FK_LotteryOpenInfo_Lotterys" FromRole="Lotterys" ToRole="LotteryOpenInfo" />
+        </EntityType>
+        <EntityType Name="Provinces">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProvinceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vie_NowTime">
+          <Key>
+            <PropertyRef Name="NowTime" />
+          </Key>
+          <Property Name="NowTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_AccountBusiness_Accounts">
+          <End Type="LotteryAPPModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="LotteryAPPModel.AccountBusiness" Role="AccountBusiness" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountBusiness">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BetInfo_Accounts">
+          <End Type="LotteryAPPModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="LotteryAPPModel.BetInfo" Role="BetInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BetInfo">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BetInfo_LotteryOpenInfo">
+          <End Type="LotteryAPPModel.LotteryOpenInfo" Role="LotteryOpenInfo" Multiplicity="0..1" />
+          <End Type="LotteryAPPModel.BetInfo" Role="BetInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryOpenInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BetInfo">
+              <PropertyRef Name="LotteryOpenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOffcialSchedule_Lotterys">
+          <End Type="LotteryAPPModel.Lotterys" Role="Lotterys" Multiplicity="1" />
+          <End Type="LotteryAPPModel.LotteryOffcialSchedule" Role="LotteryOffcialSchedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotterys">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOffcialSchedule">
+              <PropertyRef Name="LotteryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryPrizePool_LotteryOpen">
+          <End Type="LotteryAPPModel.LotteryOpenInfo" Role="LotteryOpenInfo" Multiplicity="1" />
+          <End Type="LotteryAPPModel.LotteryPrizePoolInfo" Role="LotteryPrizePoolInfo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryOpenInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryPrizePoolInfo">
+              <PropertyRef Name="LotteryOpenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOpenInfo_LotteryOpenInfo">
+          <End Type="LotteryAPPModel.LotteryOpenInfo" Role="LotteryOpenInfo" Multiplicity="1" />
+          <End Type="LotteryAPPModel.LotteryOpenInfo" Role="LotteryOpenInfo1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LotteryOpenInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOpenInfo1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LotteryOpenInfo_Lotterys">
+          <End Type="LotteryAPPModel.Lotterys" Role="Lotterys" Multiplicity="1" />
+          <End Type="LotteryAPPModel.LotteryOpenInfo" Role="LotteryOpenInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lotterys">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LotteryOpenInfo">
+              <PropertyRef Name="LotteryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pay_Record">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="merchantId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="orderNO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="orderAmount" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="payerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="payerEmail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="payerTelephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="orderDatetime" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="productName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="productPrice" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="productNum" Type="Int32" Nullable="false" />
+          <Property Name="productId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="productDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="ext1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ext2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mchtOrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pay_status" Nullable="false" Type="Int32" />
+          <Property Name="paydatetime" MaxLength="14" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="creation_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="payType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="AccountRecharge">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SinglePay_Record">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="merchantId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="orderNO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="orderDatetime" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="accountNo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="accountName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="accountType" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="bankNo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="bankName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="amt" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="ext1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ext2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="signlePay_status" Type="Byte" Nullable="false" />
+          <Property Name="singlePaydatetime" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="creationTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AccountWithdraw">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankCardNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OrderNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Money" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="isAutoPay" Type="Boolean" Nullable="false" />
+          <Property Name="auditor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="auditTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AccountRegInfoSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="AgentPercentSSC" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="AgentPercent11X5" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+          <Property Name="AgentPercentDPC" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
+        </EntityType>
+        <EntityType Name="BankCard">
+          <Key>
+            <PropertyRef Name="AccountId" />
+            <PropertyRef Name="No" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenCardName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
+          <Property Name="BankNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankChildName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="LotteryAPPModel.FK_BankCard_Accounts" FromRole="BankCard" ToRole="Accounts" />
+        </EntityType>
+        <Association Name="FK_BankCard_Accounts">
+          <End Type="LotteryAPPModel.Accounts" Role="Accounts" Multiplicity="1" />
+          <End Type="LotteryAPPModel.BankCard" Role="BankCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BankCard">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LotteryAPPModelStoreContainer" CdmEntityContainer="LotteryAPPEntities">
+          <FunctionImportMapping FunctionImportName="ChangeAccountMoney" FunctionName="LotteryAPPModel.Store.ChangeAccountMoney" />
+          <EntitySetMapping Name="AccountBusiness">
+            <EntityTypeMapping TypeName="LotteryAPPModel.AccountBusiness">
+              <MappingFragment StoreEntitySet="AccountBusiness">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="PayAfter" ColumnName="PayAfter" />
+                <ScalarProperty Name="PayBefore" ColumnName="PayBefore" />
+                <ScalarProperty Name="PayOut" ColumnName="PayOut" />
+                <ScalarProperty Name="PayIn" ColumnName="PayIn" />
+                <ScalarProperty Name="BusinessTypeId" ColumnName="BusinessTypeId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="LotteryAPPModel.Accounts">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AccountMoneyPwd" ColumnName="AccountMoneyPwd" />
+                <ScalarProperty Name="BankCardLockStatus" ColumnName="BankCardLockStatus" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+                <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="AgentPercentDPC" ColumnName="AgentPercentDPC" />
+                <ScalarProperty Name="AgentPercent11X5" ColumnName="AgentPercent11X5" />
+                <ScalarProperty Name="AgentPercentSSC" ColumnName="AgentPercentSSC" />
+                <ScalarProperty Name="AccountNickname" ColumnName="AccountNickname" />
+                <ScalarProperty Name="AccountParentId" ColumnName="AccountParentId" />
+                <ScalarProperty Name="AccountBalance" ColumnName="AccountBalance" />
+                <ScalarProperty Name="AccountPwd" ColumnName="AccountPwd" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BetInfo">
+            <EntityTypeMapping TypeName="LotteryAPPModel.BetInfo">
+              <MappingFragment StoreEntitySet="BetInfo">
+                <ScalarProperty Name="IsWinCancel" ColumnName="IsWinCancel" />
+                <ScalarProperty Name="AddNumNo" ColumnName="AddNumNo" />
+                <ScalarProperty Name="LotteryExcept" ColumnName="LotteryExcept" />
+                <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+                <ScalarProperty Name="IsGetBackPercent" ColumnName="IsGetBackPercent" />
+                <ScalarProperty Name="ChoicePosition" ColumnName="ChoicePosition" />
+                <ScalarProperty Name="BackTime" ColumnName="BackTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="MaxBackMoney" ColumnName="MaxBackMoney" />
+                <ScalarProperty Name="GetBackPercent" ColumnName="GetBackPercent" />
+                <ScalarProperty Name="WinMoney" ColumnName="WinMoney" />
+                <ScalarProperty Name="WinUnit" ColumnName="WinUnit" />
+                <ScalarProperty Name="BackMoney" ColumnName="BackMoney" />
+                <ScalarProperty Name="BetTimes" ColumnName="BetTimes" />
+                <ScalarProperty Name="BetMoney" ColumnName="BetMoney" />
+                <ScalarProperty Name="BetUnit" ColumnName="BetUnit" />
+                <ScalarProperty Name="BetPlayTypeCode" ColumnName="BetPlayTypeCode" />
+                <ScalarProperty Name="BetNum" ColumnName="BetNum" />
+                <ScalarProperty Name="ResultType" ColumnName="ResultType" />
+                <ScalarProperty Name="LotteryOpenId" ColumnName="LotteryOpenId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="LotteryAPPModel.Cities">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryOffcialSchedule">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOffcialSchedule">
+              <MappingFragment StoreEntitySet="LotteryOffcialSchedule">
+                <ScalarProperty Name="ScheduleOpenCode" ColumnName="ScheduleOpenCode" />
+                <ScalarProperty Name="ScheduleOpenTime" ColumnName="ScheduleOpenTime" />
+                <ScalarProperty Name="Expect" ColumnName="Expect" />
+                <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryOpen">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOpen">
+              <MappingFragment StoreEntitySet="LotteryOpen">
+                <ScalarProperty Name="RerollCount" ColumnName="RerollCount" />
+                <ScalarProperty Name="OpenStatus" ColumnName="OpenStatus" />
+                <ScalarProperty Name="ScheduleOpenTime" ColumnName="ScheduleOpenTime" />
+                <ScalarProperty Name="ScheduleOpenCode" ColumnName="ScheduleOpenCode" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="OpenCode" ColumnName="OpenCode" />
+                <ScalarProperty Name="Expect" ColumnName="Expect" />
+                <ScalarProperty Name="ExpectDate" ColumnName="ExpectDate" />
+                <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryOpenInfo">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryOpenInfo">
+              <MappingFragment StoreEntitySet="LotteryOpenInfo">
+                <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="OpenCode" ColumnName="OpenCode" />
+                <ScalarProperty Name="Expect" ColumnName="Expect" />
+                <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryPlays">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPlays">
+              <MappingFragment StoreEntitySet="LotteryPlays">
+                <ScalarProperty Name="PayBack" ColumnName="PayBack" />
+                <ScalarProperty Name="PrizeClass" ColumnName="PrizeClass" />
+                <ScalarProperty Name="LotteryPlayName" ColumnName="LotteryPlayName" />
+                <ScalarProperty Name="LotteryPlayId" ColumnName="LotteryPlayId" />
+                <ScalarProperty Name="LotteryType" ColumnName="LotteryType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryPrizePool">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPrizePool">
+              <MappingFragment StoreEntitySet="LotteryPrizePool">
+                <ScalarProperty Name="PoolMoney" ColumnName="PoolMoney" />
+                <ScalarProperty Name="LotteryId" ColumnName="LotteryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LotteryPrizePoolInfo">
+            <EntityTypeMapping TypeName="LotteryAPPModel.LotteryPrizePoolInfo">
+              <MappingFragment StoreEntitySet="LotteryPrizePoolInfo">
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="TotalAgenBack" ColumnName="TotalAgenBack" />
+                <ScalarProperty Name="TotalBack" ColumnName="TotalBack" />
+                <ScalarProperty Name="TotalBet" ColumnName="TotalBet" />
+                <ScalarProperty Name="LotteryOpenId" ColumnName="LotteryOpenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lotterys">
+            <EntityTypeMapping TypeName="LotteryAPPModel.Lotterys">
+              <MappingFragment StoreEntitySet="Lotterys">
+                <ScalarProperty Name="ExceptOneDay" ColumnName="ExceptOneDay" />
+                <ScalarProperty Name="ExceptLength" ColumnName="ExceptLength" />
+                <ScalarProperty Name="BetweenMinute" ColumnName="BetweenMinute" />
+                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+                <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+                <ScalarProperty Name="LotteryCode" ColumnName="LotteryCode" />
+                <ScalarProperty Name="LotteryType" ColumnName="LotteryType" />
+                <ScalarProperty Name="LotteryName" ColumnName="LotteryName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provinces">
+            <EntityTypeMapping TypeName="LotteryAPPModel.Provinces">
+              <MappingFragment StoreEntitySet="Provinces">
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vie_NowTime">
+            <EntityTypeMapping TypeName="LotteryAPPModel.vie_NowTime">
+              <MappingFragment StoreEntitySet="vie_NowTime">
+                <ScalarProperty Name="NowTime" ColumnName="NowTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pay_Record">
+            <EntityTypeMapping TypeName="LotteryAPPModel.Pay_Record">
+              <MappingFragment StoreEntitySet="Pay_Record">
+                <ScalarProperty Name="payType" ColumnName="payType" />
+                <ScalarProperty Name="creation_time" ColumnName="creation_time" />
+                <ScalarProperty Name="paydatetime" ColumnName="paydatetime" />
+                <ScalarProperty Name="pay_status" ColumnName="pay_status" />
+                <ScalarProperty Name="mchtOrderId" ColumnName="mchtOrderId" />
+                <ScalarProperty Name="ext2" ColumnName="ext2" />
+                <ScalarProperty Name="ext1" ColumnName="ext1" />
+                <ScalarProperty Name="productDesc" ColumnName="productDesc" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productNum" ColumnName="productNum" />
+                <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="orderDatetime" ColumnName="orderDatetime" />
+                <ScalarProperty Name="payerTelephone" ColumnName="payerTelephone" />
+                <ScalarProperty Name="payerEmail" ColumnName="payerEmail" />
+                <ScalarProperty Name="payerName" ColumnName="payerName" />
+                <ScalarProperty Name="orderAmount" ColumnName="orderAmount" />
+                <ScalarProperty Name="orderNO" ColumnName="orderNO" />
+                <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountRecharge">
+            <EntityTypeMapping TypeName="LotteryAPPModel.AccountRecharge">
+              <MappingFragment StoreEntitySet="AccountRecharge">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinglePay_Record">
+            <EntityTypeMapping TypeName="LotteryAPPModel.SinglePay_Record">
+              <MappingFragment StoreEntitySet="SinglePay_Record">
+                <ScalarProperty Name="creationTime" ColumnName="creationTime" />
+                <ScalarProperty Name="singlePaydatetime" ColumnName="singlePaydatetime" />
+                <ScalarProperty Name="signlePay_status" ColumnName="signlePay_status" />
+                <ScalarProperty Name="ext2" ColumnName="ext2" />
+                <ScalarProperty Name="ext1" ColumnName="ext1" />
+                <ScalarProperty Name="amt" ColumnName="amt" />
+                <ScalarProperty Name="bankName" ColumnName="bankName" />
+                <ScalarProperty Name="bankNo" ColumnName="bankNo" />
+                <ScalarProperty Name="accountType" ColumnName="accountType" />
+                <ScalarProperty Name="accountName" ColumnName="accountName" />
+                <ScalarProperty Name="accountNo" ColumnName="accountNo" />
+                <ScalarProperty Name="orderDatetime" ColumnName="orderDatetime" />
+                <ScalarProperty Name="orderNO" ColumnName="orderNO" />
+                <ScalarProperty Name="merchantId" ColumnName="merchantId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountWithdraw">
+            <EntityTypeMapping TypeName="LotteryAPPModel.AccountWithdraw">
+              <MappingFragment StoreEntitySet="AccountWithdraw">
+                <ScalarProperty Name="auditTime" ColumnName="auditTime" />
+                <ScalarProperty Name="auditor" ColumnName="auditor" />
+                <ScalarProperty Name="isAutoPay" ColumnName="isAutoPay" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="BankCardNo" ColumnName="BankCardNo" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountRegInfoSet">
+            <EntityTypeMapping TypeName="LotteryAPPModel.AccountRegInfoSet">
+              <MappingFragment StoreEntitySet="AccountRegInfoSet">
+                <ScalarProperty Name="AgentPercentDPC" ColumnName="AgentPercentDPC" />
+                <ScalarProperty Name="AgentPercent11X5" ColumnName="AgentPercent11X5" />
+                <ScalarProperty Name="AgentPercentSSC" ColumnName="AgentPercentSSC" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankCard">
+            <EntityTypeMapping TypeName="LotteryAPPModel.BankCard">
+              <MappingFragment StoreEntitySet="BankCard">
+                <ScalarProperty Name="BankChildName" ColumnName="BankChildName" />
+                <ScalarProperty Name="BankNo" ColumnName="BankNo" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="OpenCardName" ColumnName="OpenCardName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="CreatTime" ColumnName="CreatTime" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

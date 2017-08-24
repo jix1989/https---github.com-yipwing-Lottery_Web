@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fda6a5c7f2e24ae19e979a4b8f591765" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="LotteryAPPModel.AccountBusiness" Width="1.5" PointX="3" PointY="14.375" />
+        <EntityTypeShape EntityType="LotteryAPPModel.Accounts" Width="1.5" PointX="0.75" PointY="5.625" />
+        <EntityTypeShape EntityType="LotteryAPPModel.BetInfo" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="LotteryAPPModel.Cities" Width="1.5" PointX="11.75" PointY="5.25" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryOffcialSchedule" Width="1.5" PointX="8" PointY="1.5" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryOpen" Width="1.5" PointX="9.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryOpenInfo" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryPlays" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryPrizePool" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="LotteryAPPModel.LotteryPrizePoolInfo" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.Lotterys" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="LotteryAPPModel.Provinces" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.vie_NowTime" Width="1.5" PointX="11.75" PointY="2.5" />
+        <AssociationConnector Association="LotteryAPPModel.FK_AccountBusiness_Accounts" />
+        <AssociationConnector Association="LotteryAPPModel.FK_BetInfo_Accounts" />
+        <AssociationConnector Association="LotteryAPPModel.FK_BetInfo_LotteryOpenInfo" />
+        <AssociationConnector Association="LotteryAPPModel.FK_LotteryOffcialSchedule_Lotterys" />
+        <AssociationConnector Association="LotteryAPPModel.FK_LotteryPrizePool_LotteryOpen" />
+        <AssociationConnector Association="LotteryAPPModel.FK_LotteryOpenInfo_LotteryOpenInfo" />
+        <AssociationConnector Association="LotteryAPPModel.FK_LotteryOpenInfo_Lotterys" />
+        <EntityTypeShape EntityType="LotteryAPPModel.Pay_Record" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.AccountRecharge" Width="1.5" PointX="9.5" PointY="15.125" />
+        <EntityTypeShape EntityType="LotteryAPPModel.SinglePay_Record" Width="1.5" PointX="7" PointY="11.75" />
+        <EntityTypeShape EntityType="LotteryAPPModel.AccountWithdraw" Width="1.5" PointX="9.5" PointY="11.625" />
+        <EntityTypeShape EntityType="LotteryAPPModel.AccountRegInfoSet" Width="1.5" PointX="7.75" PointY="6.875" />
+        <EntityTypeShape EntityType="LotteryAPPModel.BankCard" Width="1.5" PointX="3" PointY="10.25" />
+        <AssociationConnector Association="LotteryAPPModel.FK_BankCard_Accounts" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

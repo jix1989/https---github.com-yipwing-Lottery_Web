@@ -1,0 +1,8 @@
+E:\JIX\LotteryOpenAPP\WSTest\bin\Debug\WSTest.exe.config
+E:\JIX\LotteryOpenAPP\WSTest\bin\Debug\WSTest.exe
+E:\JIX\LotteryOpenAPP\WSTest\bin\Debug\WSTest.pdb
+E:\JIX\LotteryOpenAPP\WSTest\obj\Debug\WSTest.Properties.Resources.resources
+E:\JIX\LotteryOpenAPP\WSTest\obj\Debug\WSTest.csproj.GenerateResource.Cache
+E:\JIX\LotteryOpenAPP\WSTest\obj\Debug\WSTest.exe
+E:\JIX\LotteryOpenAPP\WSTest\obj\Debug\WSTest.pdb
+E:\JIX\LotteryOpenAPP\WSTest\obj\Debug\WSTest.FrmWSTest.resources
